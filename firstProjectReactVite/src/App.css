@@ -1,4 +1,17 @@
-#root {
+.titulo_tarefa {
+  background-color: white;
+  border: 15px 15px 15px 15px;
+}
+.descricao_tarefa {
+  background-color: white;
+  border: 15px 15px 15px 15px;
+}
+.botao_addtask {
+  background-color: steelblue;
+  border: 10px 10px 10px 10px;
+}
+
+/* #root {
   max-width: 1280px;
   margin: 0 auto;
   padding: 2rem;
@@ -39,4 +52,4 @@
 
 .read-the-docs {
   color: #888;
-}
+} */
