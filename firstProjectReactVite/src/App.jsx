@@ -1,49 +1,61 @@
-import { useState } from "react";
-
-import AddTask from "./components/AddTask";
-import Tasks from "./components/Tasks";
-import './App.css'
+// import AddTask from "./components/AddTask.jsx";
+import Tasks from "./components/Tasks.jsx";
+// import './App.css'
+// import { useState } from 'react';
 
 function App() {
-
-  const [tarefas, setTarefa] = useState([
-  {
-    id: 1,
-    title: "Task 1", 
-    completed: true
-  }, 
-  {
-    id: 2,
-    title: "Task 2", 
-    completed: true
-  }, 
-  { 
-    id: 3,
-    title: "Task 3", 
-    completed: false
-  }
-  ])
-
-  function handleAddClick() {
-    setTarefa([...tarefas, {
-      id: 4,
-      title: "Task 4",
-      completed: false
-      // id: tarefas.length+1,
-      // title: "Task "+tarefas.length+1,
-    }])
-  }
-
   return (
-    <>
-      <ul>
-        {tarefas.map(tarefas => <li key={tarefas.id}>{tarefas.title}</li>)}
-      </ul>
+  // <AddTask />
+  <Tasks />
+)
+  // return (
+  //   <h1>
+  //     Teste
+  //   </h1>
+  // )
 
-      {/* Event handler */}
-      <button onClick={handleAddClick}>Adicionar Tarefa</button>
-    </>
-  )
+  // const [tarefas, setTarefa] = useState([
+  // {
+  //   id: 1,
+  //   title: "Task 1", 
+  //   completed: true
+  // }, 
+  // {
+  //   id: 2,
+  //   title: "Task 2", 
+  //   completed: true
+  // }, 
+  // { 
+  //   id: 3,
+  //   title: "Task 3", 
+  //   completed: false
+  // }
+  // ]);
+
+  //  function handleAddClick() {
+  //   console.log("Passo por aqui")
+  //   setTarefa((valorAtualdoState) => {
+  //     return [
+  //       ...valorAtualdoState, {
+  //         id: 4,
+  //         title: "Task 4",
+  //         completed: false
+  //       }
+  //     ]
+  //   })
+  // }
+
+  // return (
+  //   <>
+  //     <ul>
+  //       {tarefas.map(tarefas => <li key={tarefas.id}>{tarefas.title}</li>)}
+  //     </ul>
+
+  //     {/* Event handler */}
+  //     <button onClick={handleAddClick}>Adicionar Tarefa</button>
+  //     {console.log("Termino aqui")}
+  //   </>
+  // )
 }
 
 export default App;
