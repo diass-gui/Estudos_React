@@ -20,10 +20,7 @@ function Tasks() {
   }
   ]);
 
-  console.log("começo aqui")
-
   function handleAddClick() {
-    console.log("Passo por aqui")
     setTarefa((valorAtualdoState) => {
       return [
         ...valorAtualdoState, {
@@ -43,7 +40,6 @@ function Tasks() {
 
       {/* Event handler */}
       <button onClick={handleAddClick}>Adicionar Tarefa</button>
-      {console.log("Termino aqui")}
     </>
   );
 };
