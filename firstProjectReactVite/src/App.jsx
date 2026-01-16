@@ -1,7 +1,7 @@
-import AddTask from "./components/AddTask.jsx";
+// import AddTask from "./components/AddTask.jsx";
 import APITasks from "./components/APITasks.jsx"
-import Tasks from "./components/Tasks.jsx";
-import React, { useState } from 'react';
+// import Tasks from "./components/Tasks.jsx";
+import React, { useEffect, useState } from 'react';
 
 
 function App() {
@@ -35,12 +35,19 @@ const [tarefas, setTarefa] = useState([
       ]
     })
   };
+
+  // Exemplo de Hook: useEffect
+  useEffect(() => {
+    console.log("State tarefas foi atualizado")
+  }, [tarefas])
   
   return (
     <div className="bg-zinc-900 h-screen w-screen flex flex-col items-center justify-center">
       {/* <AddTask handleAddClick={handleAddClick}/>
       <Tasks propTasks={tarefas} propHandleAddClick={handleAddClick}/> */}
-      <APITasks />
+      <APITasks>
+        <p className="bg-white">Mickey mouse</p>
+      </APITasks>
     </div>
   )
 }

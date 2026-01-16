@@ -1,17 +1,20 @@
 import { useState } from 'react';
 import './Tasks.css';
 
-function Tasks(props) {
+function Tasks({ tasks, handleDeleteClick }) {
 
   return (
-    <div className='w-64'>
-      <ul className='space-y-2 max-h-62.5 overflow-auto'>
-        {props.propTasks.map(tarefas => 
-        <li key={tarefas.id} className='bg-indigo-100 p-4 rounded-xl'>{tarefas.title}</li>)}
+    <div className='w-[400px]'>
+      <ul className='space-y-2 max-h-[400px] overflow-auto px-4'>
+        {tasks.map((task) => (
+        <li key={task.id} className='flex gap-4'>
+        <div className='bg-indigo-400 p-4 rounded-xl w-full'>
+          <p>{task.title}</p>
+        </div>
+        {/* {console.log(task.id)} */}
+        <button onClick={() => handleDeleteClick(task.id)} className='p-1.5 rounded-xl'>🗑</button>
+        </li>))}
       </ul>
-
-      {/* Event handler */}
-      {/* <button className='bg-indigo-100 border-indigo-400 border-solid border font-semibold p-4 rounded-lg mt-2 w-full' onClick={props.propHandleAddClick}>Adicionar Tarefa</button> */}
     </div>
   );
 };
