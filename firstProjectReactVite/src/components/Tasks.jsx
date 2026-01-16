@@ -1,46 +1,18 @@
 import { useState } from 'react';
+import './Tasks.css';
 
-function Tasks() {
-
-  const [tarefas, setTarefa] = useState([
-  {
-    id: 1,
-    title: "Task 1", 
-    completed: true
-  }, 
-  {
-    id: 2,
-    title: "Task 2", 
-    completed: true
-  }, 
-  { 
-    id: 3,
-    title: "Task 3", 
-    completed: false
-  }
-  ]);
-
-  function handleAddClick() {
-    setTarefa((valorAtualdoState) => {
-      return [
-        ...valorAtualdoState, {
-          id: 4,
-          title: "Task 4",
-          completed: false
-        }
-      ]
-    })
-  };
+function Tasks(props) {
 
   return (
-    <>
-      <ul>
-        {tarefas.map(tarefas => <li key={tarefas.id}>{tarefas.title}</li>)}
+    <div className='w-64'>
+      <ul className='space-y-2 max-h-62.5 overflow-auto'>
+        {props.propTasks.map(tarefas => 
+        <li key={tarefas.id} className='bg-indigo-100 p-4 rounded-xl'>{tarefas.title}</li>)}
       </ul>
 
       {/* Event handler */}
-      <button onClick={handleAddClick}>Adicionar Tarefa</button>
-    </>
+      {/* <button className='bg-indigo-100 border-indigo-400 border-solid border font-semibold p-4 rounded-lg mt-2 w-full' onClick={props.propHandleAddClick}>Adicionar Tarefa</button> */}
+    </div>
   );
 };
 

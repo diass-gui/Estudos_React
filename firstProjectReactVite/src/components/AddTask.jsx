@@ -1,14 +1,23 @@
-function AddTask() {
-    return (
-        <div>
-            <input type="text" placeholder="Título da Tarefa"></input><br /><br />
-            <input type="text" placeholder="Descrição da Tarefa"></input><br /><br />
-            <button> Adicionar Tarefa </button>
+import { useState } from 'react';
 
-            {/* <input type="text" className="titulo_tarefa" placeholder="Título da Tarefa"></input><br /><br />
-            <input type="text" className="descricao_tarefa" placeholder="Descrição da Tarefa"></input><br /><br />
-            <button className="botao_addtask"> Adicionar Tarefa </button> */}
-        </div>
+function AddTask(props) {
+
+    const [inputTitle, setInputTitle] = useState('');
+
+    return (
+    <form className="flex gap-2 items-center mb-2" onSubmit={(event) => {
+        event.preventDefault();
+        props.handleAddClick(inputTitle)
+        setInputTitle("");
+    }}>
+        <input 
+          value={inputTitle}
+          onChange={(event) => setInputTitle(event.target.value)}
+          placeholder="Titulo da tarefa"
+          className="bg-indigo-300 p-4 rounded-lg"
+        />
+        <button type="submit" className="bg-indigo-300 p-4 rounded-lg">+</button>
+    </form>
     )
 }
 
